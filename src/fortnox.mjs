@@ -5,8 +5,8 @@ import nconf from 'nconf';
 import dayjs from 'dayjs';
 import axios from 'axios';
 
-const clientId = 'REEj4FyhNjPK';
-const clientSecret = '8x0dtCC3Zq';
+const clientId = nconf.get('fortnox:clientId');
+const clientSecret = nconf.get('fortnox:clientSecret');
 
 const redirectUri = 'http://localhost:3000/callback';
 const app = express();

@@ -24,11 +24,17 @@ App to sync Shopify with Fortnox book keeping.
 
 ## `config.json` default
 
+Get your tokens from the respective service API page.
+
 ```json
 {
   "shopify": {
     "endpoint": "https://xxxxxxxx.myshopify.com/admin/api/2024-07/graphql.json",
     "access_token": "xxxxxxxxxx"
+  },
+  "fortnox": {
+    "clientId": "xxxxxxxxxx",
+    "clientSecret": "xxxxxxxxxx"
   },
 }
 ```
