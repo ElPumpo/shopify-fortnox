@@ -5,15 +5,18 @@ import nconf from 'nconf';
 import dayjs from 'dayjs';
 import axios from 'axios';
 
-const clientId = nconf.get('fortnox:clientId');
-const clientSecret = nconf.get('fortnox:clientSecret');
+let clientId;
+let clientSecret;
 
 const redirectUri = 'http://localhost:3000/callback';
 const app = express();
 
 export async function initFortnox() {
   console.log('Init Fortnox');
-  let tokenExists = nconf.get('fortnox:accessToken') !== undefined;
+
+  const tokenExists = nconf.get('fortnox:accessToken') !== undefined;
+  clientId = nconf.get('fortnox:clientId');
+  clientSecret = nconf.get('fortnox:clientSecret');
   let authenticateRequired = true;
 
   if (tokenExists) {
